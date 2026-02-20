@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>REYHANTEX | Premium Fabric Showroom</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Vazirmatn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        reyhan: {
+                            green: '#013a34',
+                            dark: '#002521',
+                            gold: '#d4af37',
+                            goldLight: '#f3e5ab',
+                        }
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c)',
+                        'green-gradient': 'linear-gradient(to bottom, #013a34, #002521)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-subtle': 'pulseSubtle 2s ease-in-out infinite',
+                        'logo-float': 'logoFloat 8s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        pulseSubtle: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.8' } },
+                        logoFloat: { '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' }, '25%': { transform: 'translateY(-15px) rotate(2deg)' }, '50%': { transform: 'translateY(0px) rotate(0deg)' }, '75%': { transform: 'translateY(-8px) rotate(-1deg)' } },
+                        glow: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.7' } },
+                        shimmer: { '0%': { backgroundPosition: '-500px 0' }, '100%': { backgroundPosition: '500px 0' } },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #013a34;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .text-gold {
+            background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(1, 58, 52, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #002521;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37, #f3e5ab, #b38728);
+            color: #002521;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+        }
+
+        .logo-image {
+            transition: all 0.5s ease;
+            object-fit: contain;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #f3e5ab;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .tag.active {
+            background: rgba(212, 175, 55, 0.4);
+            border-color: #d4af37;
+            font-weight: bold;
+        }
+
+        .image-tag-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #f3e5ab;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .image-tag-badge:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+
+        .image-tags-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .image-container:hover .image-tags-overlay {
+            opacity: 1;
+        }
+
+        .image-container {
+            cursor: pointer;
+        }
+
+        .overlay-tag {
+            background: rgba(212, 175, 55, 0.5);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .overlay-tag:hover {
+            background: rgba(212, 175, 55, 0.8);
+            transform: scale(1.05);
+        }
+
+        .qr-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .qr-card {
+            background: #013a34;
+            border: 2px solid #d4af37;
+            border-radius: 24px;
+            padding: 2rem;
+            max-width: 350px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .qr-close {
+            color: #d4af37;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .qr-close:hover {
+            transform: scale(1.2);
+            color: #f3e5ab;
+        }
+
+        .screen-saver {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .screen-saver img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .tag-search-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .tag-search-content {
+            background: #013a34;
+            border: 2px solid #d4af37;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .play-button {
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            color: #002521;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .back-button {
+            background: rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .back-button:hover {
+            background: rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-reyhan-green min-h-screen">
+
+    <div id="app" class="w-full min-h-screen"></div>
+
+    <script>
+        /**
+         * REYHANTEX FABRIC SHOWROOM - ULTIMATE PUBLIC VERSION
+         * Complete with all fabrics and images from admin version
+         */
+
+        const CONFIG = {
+            logoImage: localStorage.getItem('reyhantex_logo') || 'assets/logo/IMG_20251209_154206_917.jpg'
+        };
+
+        // Complete fabrics list from admin version
+        const FABRICS = [
+            {
+                id: 1,
+                name: 'ریحانا',
+                enName: 'Reyhana',
+                price: '$$$',
+                image: 'assets/fabric/reyhana/children/1770015701234.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            // NEW: PofakiNegini (پفکی نگینی) - ID 2
+            {
+                id: 2,
+                name: 'پفکی نگینی',
+                enName: 'PofakiNegini',
+                price: '$$$$',
+                image: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_2fnq192fnq192fnq.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_2fnq192fnq192fnq.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            {
+                id: 3,
+                name: 'پفکی (ینزی)',
+                enName: 'Pofaki (Yenzi)',
+                price: '$$$$',
+                image: 'assets/fabric/pofaki/children/1770112977067.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            {
+                id: 4,
+                name: 'سلینا',
+                enName: 'Selina',
+                price: '$$$$',
+                image: 'assets/fabric/selina/male/1770109459483.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            {
+                id: 5,
+                name: 'پلی استر پنبه',
+                enName: 'PoliEsterPanbeh',
+                price: '$$$$',
+                image: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_ai9bq2ai9bq2ai9b.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            {
+                id: 6,
+                name: 'گیپور طرح یک',
+                enName: 'Gipur1',
+                price: '$$$$',
+                image: 'assets/fabric/melika/female/Gemini_Generated_Image_uabf1tuabf1tuabf.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            // NEW: PofakiSadeh (پفکی ساده) - ID 7
+            {
+                id: 7,
+                name: 'پفکی ساده',
+                enName: 'PofakiSadeh',
+                price: '$$$$',
+                image: 'assets/fabric/pofakiSadeh/female/1771069092414.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/pofakiSadeh/female/1771069092414.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            // NEW: Bermando (برماندو) - ID 8
+            {
+                id: 8,
+                name: 'برماندو',
+                enName: 'Bermando',
+                price: '$$$$',
+                image: 'assets/fabric/bermando/female/Gemini_Generated_Image_36k3lg36k3lg36k3.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/bermando/female/Gemini_Generated_Image_36k3lg36k3lg36k3.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            // NEW: JakardFitileh (ژاکارد فتیله‌ای) - ID 9
+            {
+                id: 9,
+                name: 'ژاکارد فتیله‌ای',
+                enName: 'JakardFitileh',
+                price: '$$$$',
+                image: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_vwv74dvwv74dvwv7.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_vwv74dvwv74dvwv7.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            }
+        ];
+
+        const CATEGORIES = [
+            {
+                id: 'male',
+                label: 'آقایـان',
+                enLabel: 'Gentlemen',
+                desc: 'ساختار و قدرت',
+                color: 'bg-blue-900/40',
+                border: 'border-blue-500/30',
+            },
+            {
+                id: 'female',
+                label: 'بانـوان',
+                enLabel: 'Ladies',
+                desc: 'شکوه و زیبایی',
+                color: 'bg-pink-900/40',
+                border: 'border-pink-500/30',
+            },
+            {
+                id: 'children',
+                label: 'کـودکان',
+                enLabel: 'Little Ones',
+                desc: 'لطافت و رویا',
+                color: 'bg-purple-900/40',
+                border: 'border-purple-500/30',
+            },
+        ];
+
+        // Complete gallery images from admin version
+        const GALLERY_IMAGES = {
+            reyhana_male: [],
+            reyhana_female: [
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 03_47_37 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 03_56_47 PM.png', tags: ['ساده', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_05_52 PM.png', tags: ['ساده', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_21_13 PM.png', tags: ['ساده', 'ست', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_34_23 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_48_54 PM.png', tags: ['ساده', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_54_43 PM.png', tags: ['ساده', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 05_16_15 PM.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 05_31_05 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 05_44_24 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 01_00_18 PM.png', tags: ['ست', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 01_07_00 PM.png', tags: ['ست', 'ساده', 'تیشرت'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 01_09_06 PM.png', tags: ['ساده'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 01_11_10 PM.png', tags: ['ساده'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 10_39_41 AM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 10_51_18 AM.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 10_51_28 AM.png', tags: ['ساده', 'ست', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 10_51_30 AM.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 10_58_39 AM.png', tags: ['ساده'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_03_33 AM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_04_47 AM.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_07_46 AM.png', tags: ['ست', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_09_06 AM.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_14_13 AM.png', tags: ['ساده'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_16_50 AM.png', tags: ['ساده'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_40_54 AM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_40_59 AM.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_41_05 AM.png', tags: ['ست', 'شومیز'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_45_50 AM.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_44_18 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_49_36 PM.png', tags: ['ساده', 'ساحلی'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_57_26 PM.png', tags: ['ست', 'تاپ'] },
+            ],
+            reyhana_children: [
+                { url: 'assets/fabric/reyhana/children/1770015636848.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015672874.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015701234.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015729556.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015790133.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015819565.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/1770015902789.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_7h6gic7h6gic7h6g.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_t2d95kt2d95kt2d9.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_tl4g8ntl4g8ntl4g.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_uw4e96uw4e96uw4e.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_uxyx4huxyx4huxyx.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_vpzgcuvpzgcuvpzg.png', tags: ['ساده', 'ست'] },
+            ],
+            // NEW: PofakiNegini images
+            pofakiNegini_male: [],
+            pofakiNegini_female: [
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_1rgolz1rgolz1rgo.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_2fnq192fnq192fnq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_2ypdrs2ypdrs2ypd.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_5eo8sr5eo8sr5eo8.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_5yqm105yqm105yqm.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_6vjsvn6vjsvn6vjs.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_7a2xq77a2xq77a2x.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_8tsprg8tsprg8tsp.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_13bgk213bgk213bg.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_39fe2l39fe2l39fe.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_772qqy772qqy772q.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_3240tp3240tp3240.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_advqa3advqa3advq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_besp8mbesp8mbesp.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_bszubbszubbszubb.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_cn3xbocn3xbocn3x.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_d80cj2d80cj2d80c.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_f8cak3f8cak3f8ca.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_f8jq0hf8jq0hf8jq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_flzfk6flzfk6flzf.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_g8k6fxg8k6fxg8k6.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_h0cyqlh0cyqlh0cy.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_jgxqb9jgxqb9jgxq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_jxj4l7jxj4l7jxj4.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_l6nqfel6nqfel6nq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_luybexluybexluyb.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_lwp04lwp04lwp04l.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_mle776mle776mle7.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_mt2es2mt2es2mt2e.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_n1q097n1q097n1q0.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_nunexknunexknune.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_o5xodco5xodco5xo.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_oyx4w8oyx4w8oyx4.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_plh0tvplh0tvplh0.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_qt1mt3qt1mt3qt1m.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_rke2l4rke2l4rke2.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_s3obv2s3obv2s3ob.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_takry5takry5takr.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_tpcqa0tpcqa0tpcq.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_u0j7ruu0j7ruu0j7.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_ubp5ucubp5ucubp5.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_vfm7vivfm7vivfm7.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_w3i6nww3i6nww3i6.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_w4qe2qw4qe2qw4qe.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_w4wrcew4wrcew4wr.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_xl9cqixl9cqixl9c.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_xv7duoxv7duoxv7d.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_z9drv6z9drv6z9dr.png', tags: [] },
+                { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_za8xp0za8xp0za8x.png', tags: [] }
+            ],
+            pofakiNegini_children: [],
+            pofaki_male: [],
+            pofaki_female: [
+                { url: 'assets/fabric/pofaki/female/1765890467695.jpg', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/1769515671229.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/1770018110135.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770018306729.png', tags: ['چاپی', 'تیشرت'] },
+                { url: 'assets/fabric/pofaki/female/1770018459064.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770018531854.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770018604231.png', tags: ['چاپی', 'تیشرت'] },
+                { url: 'assets/fabric/pofaki/female/1770019000539.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770019009600.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770019015979.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770019097905.png', tags: ['چاپی', 'تیشرت'] },
+                { url: 'assets/fabric/pofaki/female/1770019378929.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/1770039550790.png', tags: ['نگینی', 'شومیز'] },
+                { url: 'assets/fabric/pofaki/female/1770040588723.png', tags: ['چاپی', 'شومیز'] },
+                { url: 'assets/fabric/pofaki/female/1770040773855.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/female/ChatGPT Image Jan 29, 2026, 01_24_26 PM.png', tags: ['ست', 'نگینی', 'تاپ'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_e8l0qte8l0qte8l0.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_hh71tchh71tchh71.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_ncrt8kncrt8kncrt.png', tags: ['چاپی', 'تیشرت'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_uvdm5xuvdm5xuvdm.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_v68zczv68zczv68z.png', tags: ['چاپی'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_xr7tgcxr7tgcxr7t.png', tags: ['چاپی', 'شومیز'] },
+                { url: 'assets/fabric/pofaki/female/Gemini_Generated_Image_xup0yjxup0yjxup0.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151219.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151242.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151312.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151331.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151358.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151415.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151445.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151509.png', tags: ['چاپی', 'ساحلی'] },
+                { url: 'assets/fabric/pofaki/female/IMG_20260202_151535.png', tags: ['چاپی', 'ساحلی'] },
+            ],
+            pofaki_children: [
+                { url: 'assets/fabric/pofaki/children/1770110218507.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770110370256.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770110482376.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770110706577.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770112752571.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770112977067.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770113555664.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114116695.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114208083.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114262292.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114327122.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114379835.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114439797.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114487477.png', tags: ['چاپی', 'ست'] },
+                { url: 'assets/fabric/pofaki/children/1770114543076.png', tags: ['چاپی', 'ست'] },
+            ],
+            selina_male: [
+                { url: 'assets/fabric/selina/male/1770109002011.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/male/1770109219087.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/male/1770109237763.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/male/1770109404605.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/male/1770109459483.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/male/1770109780407.png', tags: ['ساده', 'ست'] },
+            ],
+            selina_female: [
+                { url: 'assets/fabric/selina/female/1765869607872.jpg', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1765891532899.jpg', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770040351354.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770040832256.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770106262449.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770106289197.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770106315164.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770108523837.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770108637157.png', tags: ['ساده', 'ست'] },
+                { url: 'assets/fabric/selina/female/1770108723545.png', tags: ['ساده', 'ست'] },
+            ],
+            selina_children: [],
+            poliEsterPanbeh_male: [
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/1766580642520.jpg', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/1766833211341.jpg', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_2bvgr32bvgr32bvg.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_5la7ti5la7ti5la7.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_ai9bq2ai9bq2ai9b.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_gl82o1gl82o1gl82.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_iy4dfyiy4dfyiy4d.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_m4j24xm4j24xm4j2.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_nxa0fonxa0fonxa0.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_oic8txoic8txoic8.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_r83ew0r83ew0r83e.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/male/Gemini_Generated_Image_y0tdsly0tdsly0td.png', tags: ['ست', 'تیشرت'] },
+            ],
+            poliEsterPanbeh_female: [
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_2fwc302fwc302fwc.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_2ugobr2ugobr2ugo.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_2xp7tx2xp7tx2xp7.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_4n4ntk4n4ntk4n4n.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_5uvkdy5uvkdy5uvk.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_17rdn17rdn17rdn1.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_59dkle59dkle59dk.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_96eo5d96eo5d96eo.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_5761lk5761lk5761.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_ac38w1ac38w1ac38.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_be3fqbbe3fqbbe3f.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_c3myugc3myugc3my.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_eaf5oseaf5oseaf5.png', tags: ['تاپ', 'ست'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_egyxjhegyxjhegyx.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_fa6en4fa6en4fa6e.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_fraixofraixofrai.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_fx8sthfx8sthfx8s.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_gl9l19gl9l19gl9l.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_htbr1htbr1htbr1h.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_huj3huj3huj3huj3.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_ja3mo3ja3mo3ja3m.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_ja8flzja8flzja8f.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_kgyncykgyncykgyn.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_kskyx0kskyx0ksky.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_l0zhzal0zhzal0zh.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_l3uchdl3uchdl3uc.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_lgvhs2lgvhs2lgvh.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_mg9kykmg9kykmg9k.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_nglp3dnglp3dnglp.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_pcp9qnpcp9qnpcp9.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_pyp8xpyp8xpyp8xp.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_r22iznr22iznr22i.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_rpqsp2rpqsp2rpqs.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_s3rabns3rabns3ra.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_s9plhfs9plhfs9pl.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_sbmxz2sbmxz2sbmx.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_tgd6detgd6detgd6.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_tjf4dstjf4dstjf4.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_x67ju9x67ju9x67j.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_yjod9gyjod9gyjod.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/Gemini_Generated_Image_z7msuzz7msuzz7ms.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771246711381.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771246830091.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771246898537.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771246968911.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771247553703.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771247679663.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771247946481.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771248183448.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771248369269.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771248578289.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771248745996.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/1771248852497.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_1ps22b1ps22b1ps2.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_2ceqv22ceqv22ceq.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_2z9h362z9h362z9h.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_4sy0yk4sy0yk4sy0.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_4xa6xl4xa6xl4xa6.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_6btfs06btfs06btf.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_7y1ecv7y1ecv7y1e.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_32jq7l32jq7l32jq.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_93kwfg93kwfg93kw.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_316u24316u24316u.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_8128go8128go8128.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_b5i7xrb5i7xrb5i7.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_bf6dbhbf6dbhbf6d.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_ccijc4ccijc4ccij.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_djz456djz456djz4.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_e0n903e0n903e0n9.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_eok2iveok2iveok2.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_f0ewo7f0ewo7f0ew.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_ftjx64ftjx64ftjx.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_fywhpffywhpffywh.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_gjguqkgjguqkgjgu.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_gxr6rdgxr6rdgxr6.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_gy3mrogy3mrogy3m.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_h8w58ih8w58ih8w5.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_hmx4ghmx4ghmx4gh.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_j016ljj016ljj016.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_jjq1v4jjq1v4jjq1.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_k93ifsk93ifsk93i.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_ktepzpktepzpktep.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_kw1adakw1adakw1a.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_ljxcdaljxcdaljxc.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_lmlbzjlmlbzjlmlb.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_mdsjm6mdsjm6mdsj.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_n86lpqn86lpqn86l.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_nj1gzinj1gzinj1g.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_njiljenjiljenjil.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_o8j2rko8j2rko8j2.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_omcbluomcbluomcb.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_opeayopeayopeayo.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_opywvcopywvcopyw.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_otf4wnotf4wnotf4.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_p43au5p43au5p43a.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_pve17xpve17xpve1.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_qt14suqt14suqt14.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_rdbrrprdbrrprdbr.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_shew6kshew6kshew.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_u88av0u88av0u88a.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_uvc85juvc85juvc8.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_w4xx4hw4xx4hw4xx.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_wn8ad4wn8ad4wn8a.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_wnc2qcwnc2qcwnc2.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_wwaco8wwaco8wwac.png', tags: [] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/female/new/Gemini_Generated_Image_y50966y50966y509.png', tags: [] }
+            ],
+            poliEsterPanbeh_children: [
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_2z2lmi2z2lmi2z2l.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_4lhsrb4lhsrb4lhs.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_9bcq4f9bcq4f9bcq.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_538lk5538lk5538l.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_6053ba6053ba6053.png', tags: ['ست', 'پیراهن'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_aje7ryaje7ryaje7.png', tags: ['ست', 'پیراهن'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_ciunx0ciunx0ciun.png', tags: ['ست', 'پیراهن'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_d1hrhbd1hrhbd1hr.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_gwwvrggwwvrggwwv.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_hqwd9ohqwd9ohqwd.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_ivn5umivn5umivn5.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_lf345lf345lf345l.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_mi5mtvmi5mtvmi5m.png', tags: ['ست', 'پیراهن'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_n485lln485lln485.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_qj6kpsqj6kpsqj6k.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_qp2fxgqp2fxgqp2f.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_qpal0iqpal0iqpal.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_qrf10zqrf10zqrf1.png', tags: ['ست', 'پیراهن'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_qxvxtzqxvxtzqxvx.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_ru9xpiru9xpiru9x.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_uvrfoxuvrfoxuvrf.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_xaheq6xaheq6xahe.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_y74033y74033y740.png', tags: ['ست', 'تیشرت'] },
+                { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_zck9ptzck9ptzck9.png', tags: ['ست', 'تیشرت'] },
+            ],
+            gipur1_male: [],
+            gipur1_female: [
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_3fovbq3fovbq3fov.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_7jw4ck7jw4ck7jw4.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_8hf8gf8hf8gf8hf8.png', tags: ['ساحلی'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_875yig875yig875y.png', tags: ['تاپ', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_g27nj2g27nj2g27n.png', tags: ['ساده', 'تونیک'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_imjw0pimjw0pimjw.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_jqtzgyjqtzgyjqtz.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_kvqh17kvqh17kvqh.png', tags: ['پیراهن', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_piq456piq456piq4.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_qhdi91qhdi91qhdi.png', tags: ['تاپ', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_ryqluuryqluuryql.png', tags: ['تاپ', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_uabf1tuabf1tuabf.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_urhjraurhjraurhj.png', tags: ['تیشرت', 'ست'] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_viwosviwosviwosv.png', tags: ['تیشرت', 'ست'] },
+            ],
+            gipur1_children: [],
+            // NEW: PofakiSadeh images
+            pofakiSadeh_female: [
+                { url: 'assets/fabric/pofakiSadeh/female/1771061793709.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771061938873.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771062063081.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771062072204.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771062619523.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771062734964.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771063677570.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771063872454.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771065413225.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771065551103.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771065716316.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771065771255.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771065848754.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066145130.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066326540.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066411825.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066527900.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066683507.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771066968182.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771067386072.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771067512313.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771067602892.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771067711448.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771067862186.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771068423702.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771068718265.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771068866747.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771068956528.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771069092414.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771069235188.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771069428656.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771069980907.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070222620.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070290273.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070364564.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070631832.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070735728.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070859116.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771070944248.png', tags: [] },
+                { url: 'assets/fabric/pofakiSadeh/female/1771071055744.png', tags: [] }
+            ],
+            pofakiSadeh_male: [],
+            pofakiSadeh_children: [],
+            // NEW: Bermando images
+            bermando_female: [
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_1i3mom1i3mom1i3m.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_1j36p21j36p21j36.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_1j511w1j511w1j51.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_2macb72macb72mac.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_36k3lg36k3lg36k3.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_3g4eus3g4eus3g4e.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_3msqxz3msqxz3msq.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_3r76fb3r76fb3r76.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_3yge993yge993yge.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_3yy1wr3yy1wr3yy1.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_5bofw75bofw75bof.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_5jxyxr5jxyxr5jxy.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_70caq470caq470ca.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_7leeoj7leeoj7lee.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_8l7u3t8l7u3t8l7u.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_90g4mq90g4mq90g4.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_9kni7c9kni7c9kni.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_552xxh552xxh552x.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_dg9ge7dg9ge7dg9g.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_e245lae245lae245.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_fj1ff4fj1ff4fj1f.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_fsuy85fsuy85fsuy.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_fsx44sfsx44sfsx4.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_gfvs7ngfvs7ngfvs.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_gm07b9gm07b9gm07.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_i2f7i3i2f7i3i2f7.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ih5p1hih5p1hih5p.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_inoz5einoz5einoz.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_j08wfqj08wfqj08w.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_jdsr83jdsr83jdsr.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_jf8vwmjf8vwmjf8v.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_k6h2guk6h2guk6h2.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_k6la2lk6la2lk6la.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_k8moqnk8moqnk8mo.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_k68wddk68wddk68w.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_kpp58ekpp58ekpp5.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ktorpdktorpdktor.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_m76rtlm76rtlm76r.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_mezuvimezuvimezu.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_n5d35an5d35an5d3.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_nc0rjknc0rjknc0r.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ntzcq9ntzcq9ntzc.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_oeds5aoeds5aoeds.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ozi9i3ozi9i3ozi9.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_p049cp049cp049cp.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_pitz1qpitz1qpitz.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_q8vth5q8vth5q8vt.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_qlba0xqlba0xqlba.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_r63mobr63mobr63m.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ri4y15ri4y15ri4y.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_sty2j2sty2j2sty2.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_tknn37tknn37tknn.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_xcjrf7xcjrf7xcjr.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_ye4kw3ye4kw3ye4k.png', tags: [] },
+                { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_z66fplz66fplz66f.png', tags: [] }
+            ],
+            bermando_male: [],
+            bermando_children: [],
+            // NEW: JakardFitileh images
+            jakardFitileh_female: [
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_1lrn5b1lrn5b1lrn.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_1ur3ke1ur3ke1ur3.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_2ubzcq2ubzcq2ubz.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_3lgldz3lgldz3lgl.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_4uuwgx4uuwgx4uuw.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_6a0mxz6a0mxz6a0m.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_6cqocc6cqocc6cqo.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_211zd4211zd4211z.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_796v0b796v0b796v.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_afk5h4afk5h4afk5.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_askql3askql3askq.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_av74a8av74a8av74.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_dd102kdd102kdd10.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_dhmttdhmttdhmttd.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_e0dqs6e0dqs6e0dq.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_e7fdese7fdese7fd.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_ekh8t5ekh8t5ekh8.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_fybmbffybmbffybm.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_fzj6u5fzj6u5fzj6.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_g7fefzg7fefzg7fe.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_gbheodgbheodgbhe.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_gw0qiogw0qiogw0q.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_gzzeuqgzzeuqgzze.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_jrmoz6jrmoz6jrmo.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_jsip65jsip65jsip.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_kzadgvkzadgvkzad.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_leczdmleczdmlecz.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_liye2gliye2gliye.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_lpiiwclpiiwclpii.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_lwkzwvlwkzwvlwkz.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_m0r3jom0r3jom0r3.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_m1stwem1stwem1st.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_mz8491mz8491mz84.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_o2upbyo2upbyo2up.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_ozqajiozqajiozqa.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_q74ey9q74ey9q74e.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_r3p16qr3p16qr3p1.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_rq4bnkrq4bnkrq4b.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_sxuavnsxuavnsxua.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_tif1ntif1ntif1nt.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_tvprj2tvprj2tvpr.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_ulumkqulumkqulum.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_uoj46uoj46uoj46u.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_var6mdvar6mdvar6.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_vwv74dvwv74dvwv7.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_vx79c6vx79c6vx79.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_xd699dxd699dxd69.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_xet1q7xet1q7xet1.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_xpcqraxpcqraxpcq.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_yiv8wuyiv8wuyiv8.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_ykbaduykbaduykba.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_z1o4ajz1o4ajz1o4.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_z7ec8uz7ec8uz7ec.png', tags: [] },
+                { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_z8dw8ez8dw8ez8dw.png', tags: [] }
+            ],
+            jakardFitileh_male: [],
+            jakardFitileh_children: []
+        };
+
+        // Screen saver variables
+        let screenSaverTimer = null;
+        let screenSaverActive = false;
+        let screenSaverImages = [];
+        let screenSaverInterval = null;
+
+        // Play mode variables
+        let playModeActive = false;
+        let playModeImages = [];
+        let playModeIndex = 0;
+        let playModeInterval = null;
+
+        // Navigation history stack
+        const navigationHistory = [];
+
+        // Application State
+        const state = {
+            view: 'landing',
+            selectedFabric: null,
+            selectedCategory: null,
+            tagSearchState: {
+                isOpen: false,
+                searchQuery: '',
+                searchResults: [],
+                selectedTag: null
+            },
+            qrPopupVisible: false
+        };
+
+        // Helper Functions
+        function getFabricNameById(id) {
+            const fabricNames = {
+                1: 'reyhana',
+                2: 'pofakiNegini',
+                3: 'pofaki',
+                4: 'selina',
+                5: 'poliEsterPanbeh',
+                6: 'gipur1',
+                7: 'pofakiSadeh',
+                8: 'bermando',
+                9: 'jakardFitileh'
+            };
+            return fabricNames[id];
+        }
+
+        function getGalleryImages(fabricId, categoryId) {
+            const fabricName = getFabricNameById(fabricId);
+            const key = `${fabricName}_${categoryId}`;
+            return GALLERY_IMAGES[key] || [];
+        }
+
+        function getAllTags() {
+            const tagsSet = new Set();
+            Object.values(GALLERY_IMAGES).forEach(categoryImages => {
+                categoryImages.forEach(imageData => {
+                    if (imageData.tags && Array.isArray(imageData.tags)) {
+                        imageData.tags.forEach(tag => tagsSet.add(tag));
+                    }
+                });
+            });
+            return Array.from(tagsSet).sort();
+        }
+
+        function getImagesByTag(tag) {
+            const results = [];
+            Object.entries(GALLERY_IMAGES).forEach(([category, images]) => {
+                images.forEach(imageData => {
+                    if (imageData.tags && imageData.tags.includes(tag)) {
+                        results.push({
+                            url: imageData.url,
+                            category: category,
+                            tags: imageData.tags,
+                            fabric: getFabricFromCategory(category),
+                            categoryName: getCategoryNameFromKey(category)
+                        });
+                    }
+                });
+            });
+            return results;
+        }
+
+        function getFabricFromCategory(categoryKey) {
+            const fabricName = categoryKey.split('_')[0];
+            const fabric = FABRICS.find(f => {
+                const fName = f.enName.toLowerCase().replace(/\s+/g, '').replace(/[()]/g, '');
+                return fName === fabricName ||
+                    (fabricName === 'poliEsterPanbeh' && f.enName === 'PoliEsterPanbeh') ||
+                    (fabricName === 'pofaki' && f.enName === 'Pofaki (Yenzi)') ||
+                    (fabricName === 'reyhana' && f.enName === 'Reyhana') ||
+                    (fabricName === 'selina' && f.enName === 'Selina') ||
+                    (fabricName === 'gipur1' && f.enName === 'Gipur1') ||
+                    (fabricName === 'pofakiNegini' && f.enName === 'PofakiNegini') ||
+                    (fabricName === 'pofakiSadeh' && f.enName === 'PofakiSadeh') ||
+                    (fabricName === 'bermando' && f.enName === 'Bermando') ||
+                    (fabricName === 'jakardFitileh' && f.enName === 'JakardFitileh');
+            });
+            return fabric ? fabric.name : fabricName;
+        }
+
+        function getCategoryNameFromKey(categoryKey) {
+            const categoryId = categoryKey.split('_')[1];
+            const category = CATEGORIES.find(c => c.id === categoryId);
+            return category ? category.label : categoryId;
+        }
+
+        function getAllImages() {
+            const allImages = [];
+            Object.entries(GALLERY_IMAGES).forEach(([categoryKey, images]) => {
+                images.forEach(imageData => {
+                    allImages.push({
+                        url: imageData.url,
+                        tags: imageData.tags || [],
+                        category: categoryKey,
+                        fabric: getFabricFromCategory(categoryKey),
+                        categoryName: getCategoryNameFromKey(categoryKey)
+                    });
+                });
+            });
+            return allImages;
+        }
+
+        function getRandomImageForFabric(fabricId) {
+            const fabricName = getFabricNameById(fabricId);
+            const allImages = [
+                ...(GALLERY_IMAGES[`${fabricName}_male`] || []),
+                ...(GALLERY_IMAGES[`${fabricName}_female`] || []),
+                ...(GALLERY_IMAGES[`${fabricName}_children`] || [])
+            ];
+            if (allImages.length > 0) {
+                const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+                return randomImage.url;
+            }
+            return FABRICS.find(f => f.id === fabricId).image;
+        }
+
+        // Screen Saver Functions
+        function resetScreenSaverTimer() {
+            if (screenSaverTimer) {
+                clearTimeout(screenSaverTimer);
+            }
+
+            if (!screenSaverActive && !playModeActive) {
+                screenSaverTimer = setTimeout(startScreenSaver, 30000);
+            }
+        }
+
+        function startScreenSaver() {
+            if (screenSaverActive || playModeActive) return;
+
+            const allImages = getAllImages();
+            if (allImages.length === 0) return;
+
+            screenSaverActive = true;
+            screenSaverImages = allImages;
+
+            const screenSaverEl = document.createElement('div');
+            screenSaverEl.className = 'screen-saver';
+            screenSaverEl.id = 'screenSaver';
+            screenSaverEl.onclick = stopScreenSaver;
+
+            const randomIndex = Math.floor(Math.random() * screenSaverImages.length);
+            const img = document.createElement('img');
+            img.src = screenSaverImages[randomIndex].url;
+            img.alt = 'Screen Saver';
+            screenSaverEl.appendChild(img);
+
+            document.body.appendChild(screenSaverEl);
+
+            screenSaverInterval = setInterval(() => {
+                const currentEl = document.getElementById('screenSaver');
+                if (currentEl && screenSaverImages.length > 0) {
+                    const newIndex = Math.floor(Math.random() * screenSaverImages.length);
+                    currentEl.innerHTML = `<img src="${screenSaverImages[newIndex].url}" alt="Screen Saver">`;
+                }
+            }, 3000);
+        }
+
+        function stopScreenSaver() {
+            const screenSaverEl = document.getElementById('screenSaver');
+            if (screenSaverEl) {
+                screenSaverEl.remove();
+            }
+
+            if (screenSaverInterval) {
+                clearInterval(screenSaverInterval);
+                screenSaverInterval = null;
+            }
+
+            screenSaverActive = false;
+            resetScreenSaverTimer();
+        }
+
+        // Play Mode Functions
+        function startPlayMode(images) {
+            if (!images || images.length === 0) {
+                showNotification('تصویری برای نمایش وجود ندارد', 'warning');
+                return;
+            }
+
+            if (playModeActive) {
+                stopPlayMode();
+            }
+
+            if (screenSaverActive) {
+                stopScreenSaver();
+            }
+
+            playModeActive = true;
+            playModeImages = images;
+            playModeIndex = 0;
+
+            const playModeEl = document.createElement('div');
+            playModeEl.className = 'screen-saver';
+            playModeEl.id = 'playMode';
+            playModeEl.onclick = stopPlayMode;
+
+            const img = document.createElement('img');
+            img.src = playModeImages[0].url;
+            img.alt = 'Play Mode';
+            playModeEl.appendChild(img);
+
+            document.body.appendChild(playModeEl);
+
+            playModeInterval = setInterval(() => {
+                const currentEl = document.getElementById('playMode');
+                if (currentEl && playModeActive) {
+                    playModeIndex = (playModeIndex + 1) % playModeImages.length;
+                    currentEl.innerHTML = `<img src="${playModeImages[playModeIndex].url}" alt="Play Mode">`;
+                }
+            }, 3000);
+        }
+
+        function stopPlayMode() {
+            const playModeEl = document.getElementById('playMode');
+            if (playModeEl) {
+                playModeEl.remove();
+            }
+
+            if (playModeInterval) {
+                clearInterval(playModeInterval);
+                playModeInterval = null;
+            }
+
+            playModeActive = false;
+            playModeImages = [];
+            playModeIndex = 0;
+            resetScreenSaverTimer();
+        }
+
+        // Core Functions
+        function openImageInNewTab(imageUrl) {
+            if (imageUrl) {
+                window.open(imageUrl, '_blank');
+            }
+        }
+
+        function searchByTag(tag) {
+            state.tagSearchState.isOpen = true;
+            state.tagSearchState.searchQuery = tag;
+            state.tagSearchState.selectedTag = tag;
+            state.tagSearchState.searchResults = getImagesByTag(tag);
+            render();
+        }
+
+        // Navigation with history
+        function navigateTo(view) {
+            // Add current view to history before changing
+            if (navigationHistory.length === 0 || navigationHistory[navigationHistory.length - 1] !== state.view) {
+                navigationHistory.push(state.view);
+            }
+
+            state.view = view;
+            render();
+            window.scrollTo(0, 0);
+            resetScreenSaverTimer();
+        }
+
+        // Back navigation
+        function goBack() {
+            if (navigationHistory.length > 0) {
+                const previousView = navigationHistory.pop();
+                state.view = previousView;
+                render();
+                window.scrollTo(0, 0);
+                resetScreenSaverTimer();
+            } else {
+                if (state.view !== 'landing') {
+                    navigateTo('landing');
+                }
+            }
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg animate-slide-up ${type === 'success' ? 'bg-green-600' :
+                type === 'error' ? 'bg-red-600' :
+                    type === 'warning' ? 'bg-yellow-600' : 'bg-blue-600'
+                }`;
+            notification.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i data-lucide="${type === 'success' ? 'check-circle' :
+                    type === 'error' ? 'alert-circle' :
+                        type === 'warning' ? 'alert-triangle' : 'info'
+                }" class="w-5 h-5"></i>
+                    <span class="font-bold">${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            lucide.createIcons();
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function toggleQrPopup() {
+            state.qrPopupVisible = !state.qrPopupVisible;
+            render();
+        }
+
+        function createQrPopup() {
+            if (!state.qrPopupVisible) return '';
+            return `
+                <div class="qr-popup" onclick="toggleQrPopup()">
+                    <div class="qr-card text-center" onclick="event.stopPropagation()">
+                        <div class="flex justify-end mb-2">
+                            <i data-lucide="x" class="qr-close w-6 h-6" onclick="toggleQrPopup()"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg mb-4 shadow-lg">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://hosseinfallah-h.github.io/reyhantex_card" 
+                                 alt="QR Code for Reyhantex digital card" 
+                                 class="w-full h-auto">
+                        </div>
+                        <p class="text-reyhan-gold font-bold text-lg mb-2">Reyhantex Card</p>
+                        <p class="text-white/80 text-sm">برای مشاهده کارت ما اسکن کنید !</p>
+                        <div class="mt-4 text-xs text-reyhan-gold/60">
+                            <i data-lucide="shield" class="w-3 h-3 inline ml-1"></i>
+                            QR کد پایدار - همیشه به کارت ریحان تکس متصل است
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getLogoMarkup(size = 'w-40 h-40', animate = true) {
+            return `
+                <div class="flex flex-col items-center justify-center ${animate ? 'animate-logo-float' : ''}">
+                    <div class="${size} rounded-full overflow-hidden border-4 border-reyhan-gold/30 logo-glow">
+                        <img src="${CONFIG.logoImage}"
+                             alt="REYHANTEX Logo"
+                             class="w-full h-full object-cover logo-image">
+                    </div>
+                    <h1 class="text-gold font-black tracking-[0.3em] text-3xl mt-4 drop-shadow-lg">REYHANTEX</h1>
+                </div>
+            `;
+        }
+
+        // Tag Search Functions
+        window.openTagSearch = () => {
+            state.tagSearchState.isOpen = true;
+            state.tagSearchState.searchQuery = '';
+            state.tagSearchState.searchResults = [];
+            state.tagSearchState.selectedTag = null;
+            render();
+            setTimeout(() => {
+                const input = document.getElementById('tagSearchInput');
+                if (input) input.focus();
+            }, 100);
+        };
+
+        window.closeTagSearch = () => {
+            state.tagSearchState.isOpen = false;
+            render();
+        };
+
+        window.updateTagSearch = (event) => {
+            const query = event.target.value;
+            state.tagSearchState.searchQuery = query;
+            state.tagSearchState.selectedTag = null;
+
+            const allTags = getAllTags();
+            if (query.trim() !== '') {
+                const matchingTags = allTags.filter(tag => tag.includes(query));
+                if (matchingTags.length === 1) {
+                    searchByTag(matchingTags[0]);
+                } else {
+                    state.tagSearchState.searchResults = [];
+                }
+            } else {
+                state.tagSearchState.searchResults = [];
+            }
+            render();
+        };
+
+        window.searchByTag = (tag) => {
+            state.tagSearchState.selectedTag = tag;
+            state.tagSearchState.searchQuery = tag;
+            state.tagSearchState.searchResults = getImagesByTag(tag);
+            render();
+        };
+
+        window.openAllImages = () => {
+            state.tagSearchState.isOpen = false;
+            state.view = 'allImages';
+            render();
+        };
+
+        function createTagSearchModal() {
+            if (!state.tagSearchState.isOpen) return '';
+
+            const allTags = getAllTags();
+            const filteredTags = allTags.filter(tag =>
+                tag.includes(state.tagSearchState.searchQuery)
+            );
+
+            return `
+                <div class="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 animate-fade-in">
+                    <div class="bg-reyhan-green rounded-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden border border-reyhan-gold/30">
+                        <div class="p-6 border-b border-reyhan-gold/20">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-white">جستجوی تگ</h3>
+                                <button onclick="closeTagSearch()" class="text-reyhan-gold hover:text-reyhan-goldLight">
+                                    <i data-lucide="x" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <input type="text"
+                                       id="tagSearchInput"
+                                       class="w-full px-4 py-3 bg-reyhan-dark/50 border border-reyhan-gold/30 rounded-lg text-white placeholder-gray-400"
+                                       placeholder="جستجوی تگ..."
+                                       value="${state.tagSearchState.searchQuery}"
+                                       oninput="updateTagSearch(event)">
+                                <i data-lucide="search" class="absolute left-3 top-3.5 w-5 h-5 text-reyhan-gold/50"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 overflow-y-auto max-h-[50vh]">
+                            ${filteredTags.length > 0 ? `
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    ${filteredTags.map(tag => `
+                                        <button onclick="searchByTag('${tag}')"
+                                                class="tag ${state.tagSearchState.selectedTag === tag ? 'active' : ''}">
+                                            ${tag}
+                                            <span class="text-xs text-reyhan-goldLight">(${getImagesByTag(tag).length})</span>
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            ` : `
+                                <div class="text-center py-8 text-gray-400">
+                                    <i data-lucide="tag" class="w-12 h-12 mx-auto mb-4"></i>
+                                    <p>تگی یافت نشد</p>
+                                </div>
+                            `}
+                            
+                            ${state.tagSearchState.selectedTag && state.tagSearchState.searchResults.length > 0 ? `
+                                <div class="mt-6">
+                                    <h4 class="text-lg font-bold text-white mb-4">
+                                        تصاویر با تگ "${state.tagSearchState.selectedTag}"
+                                        <span class="text-reyhan-gold text-sm">(${state.tagSearchState.searchResults.length} تصویر)</span>
+                                    </h4>
+                                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                        ${state.tagSearchState.searchResults.map((img, index) => {
+                const tags = img.tags || [];
+                return `
+                                            <div class="relative rounded-lg overflow-hidden border border-reyhan-gold/20 group cursor-pointer">
+                                                <img src="${img.url}" class="w-full h-32 object-cover" onclick="openImageInNewTab('${img.url}')">
+                                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-end justify-end p-2">
+                                                    <div class="text-white text-xs text-left">
+                                                        <div class="font-bold">${img.fabric}</div>
+                                                        <div>${img.categoryName}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="image-tags-overlay">
+                                                    ${tags.length > 0 ? `
+                                                        <div class="flex flex-wrap gap-1 justify-center">
+                                                            ${tags.map(tag => `<span class="overlay-tag" onclick="event.stopPropagation(); searchByTag('${tag}')">${tag}</span>`).join('')}
+                                                        </div>
+                                                    ` : ''}
+                                                </div>
+                                            </div>
+                                        `}).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+                        
+                        <div class="p-6 border-t border-reyhan-gold/20">
+                            <div class="flex justify-between">
+                                <button onclick="closeTagSearch()"
+                                        class="px-4 py-2 border border-reyhan-gold/50 text-reyhan-gold rounded-lg hover:bg-reyhan-gold/10">
+                                    بستن
+                                </button>
+                                <div class="flex gap-4">
+                                    <button onclick="openAllImages()"
+                                            class="px-4 py-2 bg-reyhan-gold/20 text-reyhan-gold rounded-lg hover:bg-reyhan-gold/30 text-sm flex items-center gap-2">
+                                        <i data-lucide="grid" class="w-4 h-4"></i>
+                                        همه تصاویر
+                                    </button>
+                                    <div class="text-sm text-reyhan-gold/70">
+                                        <i data-lucide="tags" class="w-4 h-4 inline ml-1"></i>
+                                        ${allTags.length} تگ موجود
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // All Images Gallery View
+        function createAllImagesView() {
+            const allImages = getAllImages();
+
+            const el = document.createElement('div');
+            el.className = 'min-h-screen animate-fade-in bg-green-gradient';
+            el.innerHTML = `
+                <div class="pt-20 pb-12 px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-white">همه تصاویر</h2>
+                        <p class="text-reyhan-gold text-sm mt-2">${allImages.length} تصویر از تمامی پارچه‌ها</p>
+                        ${allImages.length > 0 ? `
+                            <button onclick="startPlayMode(${JSON.stringify(allImages)})"
+                                    class="mt-4 px-6 py-3 play-button rounded-lg font-bold flex items-center gap-2 mx-auto hover:scale-105 transition-all">
+                                <i data-lucide="play" class="w-5 h-5"></i>
+                                پخش خودکار تمام تصاویر
+                            </button>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="glass-panel rounded-2xl p-6 mb-8 backdrop-blur-xl">
+                        <div class="flex flex-wrap gap-4 items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <span class="text-white font-bold">فیلترها:</span>
+                                <select id="fabricFilter" class="bg-reyhan-dark/50 text-white px-4 py-2 rounded-lg border border-reyhan-gold/30">
+                                    <option value="">همه پارچه‌ها</option>
+                                    ${FABRICS.map(fabric => `
+                                        <option value="${fabric.id}">${fabric.name}</option>
+                                    `).join('')}
+                                </select>
+                                <select id="categoryFilter" class="bg-reyhan-dark/50 text-white px-4 py-2 rounded-lg border border-reyhan-gold/30">
+                                    <option value="">همه دسته‌بندی‌ها</option>
+                                    ${CATEGORIES.map(category => `
+                                        <option value="${category.id}">${category.label}</option>
+                                    `).join('')}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ${allImages.length > 0 ? `
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="allImagesGrid">
+                            ${allImages.map((imageData, index) => {
+                const tags = imageData.tags || [];
+                return `
+                                <div class="relative bg-reyhan-dark/50 rounded-xl overflow-hidden border border-reyhan-gold/20 hover:border-reyhan-gold transition-all duration-300 image-container group"
+                                     data-fabric="${imageData.fabric}"
+                                     data-category="${imageData.categoryName}">
+                                    
+                                    <div class="absolute top-2 right-2 z-20 flex flex-col gap-1">
+                                        <span class="bg-blue-600/80 text-white text-xs px-2 py-1 rounded">${imageData.fabric}</span>
+                                        <span class="bg-pink-600/80 text-white text-xs px-2 py-1 rounded">${imageData.categoryName}</span>
+                                    </div>
+                                    
+                                    ${tags.length > 0 ? `
+                                        <div class="image-tag-badge" onclick="event.stopPropagation(); searchByTag('${tags[0]}')">
+                                            <i data-lucide="tag" class="w-3 h-3 inline ml-1"></i>
+                                            ${tags.length} تگ
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <img src="${imageData.url}"
+                                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                         onclick="openImageInNewTab('${imageData.url}')">
+                                    
+                                    <div class="image-tags-overlay">
+                                        ${tags.length > 0 ? `
+                                            <div class="flex flex-wrap gap-1 justify-center">
+                                                ${tags.map(tag => `
+                                                    <span class="overlay-tag" onclick="event.stopPropagation(); searchByTag('${tag}')">${tag}</span>
+                                                `).join('')}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                    
+                                    <div class="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                                        ${index + 1}
+                                    </div>
+                                </div>
+                            `}).join('')}
+                        </div>
+                    ` : `
+                        <div class="text-center py-16 glass-panel rounded-2xl max-w-md mx-auto">
+                            <i data-lucide="image-off" class="w-16 h-16 text-reyhan-gold/50 mx-auto mb-4"></i>
+                            <p class="text-gray-300">هیچ تصویری در پلتفرم وجود ندارد</p>
+                        </div>
+                    `}
+                    
+                    <div class="text-center mt-12">
+                        <button onclick="navigateTo('landing')"
+                                class="inline-flex items-center gap-2 px-6 py-3 border-2 border-reyhan-gold/50 text-reyhan-gold rounded-lg hover:bg-reyhan-gold/10 transition-all backdrop-blur-sm">
+                            <i data-lucide="arrow-right"></i>
+                            بازگشت به صفحه اصلی
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => {
+                const fabricFilter = el.querySelector('#fabricFilter');
+                const categoryFilter = el.querySelector('#categoryFilter');
+                const imagesGrid = el.querySelector('#allImagesGrid');
+
+                if (fabricFilter && categoryFilter && imagesGrid) {
+                    const filterImages = () => {
+                        const selectedFabric = fabricFilter.value;
+                        const selectedCategory = categoryFilter.value;
+                        const images = imagesGrid.querySelectorAll('.image-container');
+
+                        images.forEach(img => {
+                            const fabric = img.getAttribute('data-fabric');
+                            const category = img.getAttribute('data-category');
+                            let show = true;
+
+                            if (selectedFabric) {
+                                const fabricObj = FABRICS.find(f => f.id === parseInt(selectedFabric));
+                                if (fabricObj && fabric !== fabricObj.name) show = false;
+                            }
+                            if (selectedCategory && show) {
+                                const categoryObj = CATEGORIES.find(c => c.id === selectedCategory);
+                                if (categoryObj && category !== categoryObj.label) show = false;
+                            }
+                            img.style.display = show ? 'block' : 'none';
+                        });
+                    };
+                    fabricFilter.addEventListener('change', filterImages);
+                    categoryFilter.addEventListener('change', filterImages);
+                }
+            }, 100);
+
+            return el;
+        }
+
+        // Landing Page
+        function createLandingView() {
+            const el = document.createElement('div');
+            el.className = 'w-full min-h-screen animate-fade-in';
+
+            el.innerHTML = `
+                <div id="headerSection" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-green-gradient/95 backdrop-blur-md border-b border-reyhan-gold/10">
+                    <div id="logoContainer" class="transition-all duration-500">
+                        <div class="text-center">
+                            ${getLogoMarkup('w-40 h-40', true)}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 pt-64">
+                    <div class="absolute inset-0 bg-gradient-to-b from-reyhan-green/30 via-transparent to-reyhan-green"></div>
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-reyhan-gold/5 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-reyhan-gold/5 rounded-full blur-3xl"></div>
+                </div>
+
+                <div class="relative pt-80 pb-20 px-4 max-w-7xl mx-auto">
+                    <div class="text-center mb-16 animate-slide-up" style="animation-delay: 0.2s">
+                        <h2 class="text-4xl font-bold text-white mb-4">مجموعه پارچه‌های ریحان تکس</h2>
+                        <p class="text-reyhan-gold text-lg max-w-2xl mx-auto">مشاهده و انتخاب پارچه‌های لوکس و باکیفیت</p>
+                    </div>
+                   
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${FABRICS.map((fabric, index) => {
+                const randomImage = getRandomImageForFabric(fabric.id);
+                return `
+                                <div onclick="selectFabric(${fabric.id})"
+                                     class="group relative bg-gradient-to-br from-reyhan-dark to-reyhan-green rounded-3xl overflow-hidden cursor-pointer border-2 border-reyhan-gold/10 hover:border-reyhan-gold transition-all duration-500 hover:-translate-y-3 animate-slide-up"
+                                     style="animation-delay: ${index * 0.1}s">
+                                   
+                                    <div class="aspect-square overflow-hidden relative">
+                                        <img src="${randomImage}"
+                                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
+                                             onclick="event.stopPropagation(); openImageInNewTab('${randomImage}')">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-reyhan-green to-transparent opacity-80"></div>
+                                       
+                                        <div class="absolute top-4 left-4 px-4 py-2 bg-reyhan-gold/20 backdrop-blur-sm rounded-full">
+                                            <span class="text-reyhan-gold font-bold">${fabric.price}</span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="p-6 relative">
+                                        <h3 class="text-xl font-bold text-white mb-2">${fabric.name}</h3>
+                                        <p class="text-reyhan-gold text-sm mb-4">${fabric.enName}</p>
+                                       
+                                        <div class="flex gap-2 mt-4">
+                                            <span class="px-3 py-1 bg-blue-900/30 text-blue-200 text-xs rounded-full border border-blue-700/30">آقایان</span>
+                                            <span class="px-3 py-1 bg-pink-900/30 text-pink-200 text-xs rounded-full border border-pink-700/30">بانوان</span>
+                                            <span class="px-3 py-1 bg-purple-900/30 text-purple-200 text-xs rounded-full border border-purple-700/30">کودکان</span>
+                                        </div>
+                                       
+                                        <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <button class="w-full py-3 btn-gold rounded-lg font-bold flex items-center justify-center gap-2">
+                                                <span>مشاهده</span>
+                                                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+            }).join('')}
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => {
+                const headerSection = el.querySelector('#headerSection');
+                const logoContainer = el.querySelector('#logoContainer');
+
+                const scrollHandler = () => {
+                    const scrollY = window.scrollY;
+                    const shrinkPoint = 50;
+
+                    if (scrollY > shrinkPoint) {
+                        headerSection.style.padding = '10px 0';
+                        headerSection.style.height = '80px';
+                        headerSection.style.backdropFilter = 'blur(20px)';
+                        headerSection.style.backgroundColor = 'rgba(1, 58, 52, 0.98)';
+                        headerSection.style.borderBottom = '1px solid rgba(212, 175, 55, 0.2)';
+
+                        logoContainer.innerHTML = `
+                            <div class="flex items-center justify-center gap-4">
+                                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-reyhan-gold/30">
+                                    <img src="${CONFIG.logoImage}"
+                                         alt="REYHANTEX Logo"
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <h1 class="text-gold font-black tracking-widest text-lg">REYHANTEX</h1>
+                            </div>
+                        `;
+                    } else {
+                        headerSection.style.padding = '20px 0';
+                        headerSection.style.height = 'auto';
+                        headerSection.style.backdropFilter = 'blur(10px)';
+                        headerSection.style.backgroundColor = 'rgba(1, 58, 52, 0.95)';
+                        headerSection.style.borderBottom = '1px solid rgba(212, 175, 55, 0.1)';
+
+                        logoContainer.innerHTML = `
+                            <div class="text-center">
+                                ${getLogoMarkup('w-40 h-40', true)}
+                            </div>
+                        `;
+                    }
+                };
+
+                window.addEventListener('scroll', scrollHandler);
+                scrollHandler();
+            }, 100);
+
+            return el;
+        }
+
+        // Category Selection View
+        function createCategoryView() {
+            const el = document.createElement('div');
+            el.className = 'min-h-screen animate-fade-in bg-green-gradient';
+            el.innerHTML = `
+                <div class="pt-20 pb-8 px-4">
+                    <div class="max-w-md mx-auto mb-8 glass-panel rounded-2xl p-6 backdrop-blur-xl">
+                        <div class="text-center">
+                            <p class="text-reyhan-gold text-sm mb-2">پارچه انتخابی</p>
+                            <h3 class="text-xl font-bold text-white">${state.selectedFabric.name}</h3>
+                            <p class="text-reyhan-gold text-sm">${state.selectedFabric.enName}</p>
+                        </div>
+                    </div>
+                   
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-white">انتخاب دسته بندی</h2>
+                        <p class="text-reyhan-gold text-sm mt-2">لطفا گروه مورد نظر خود را انتخاب کنید</p>
+                    </div>
+                   
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        ${CATEGORIES.map((category, index) => `
+                            <div onclick="selectCategory('${category.id}')"
+                                 class="group relative h-96 rounded-3xl overflow-hidden cursor-pointer border-2 ${category.border} hover:border-reyhan-gold transition-all duration-500 hover:-translate-y-2 animate-slide-up"
+                                 style="animation-delay: ${index * 0.2}s">
+                                <img src="${state.selectedFabric.categoryImages[category.id]}"
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
+                                     onclick="event.stopPropagation(); openImageInNewTab('${state.selectedFabric.categoryImages[category.id]}')">
+                                <div class="absolute inset-0 ${category.color} opacity-60"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-reyhan-green to-transparent opacity-70"></div>
+                               
+                                <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                                    <h3 class="text-2xl font-bold text-white">${category.label}</h3>
+                                    <p class="text-reyhan-gold text-sm mt-2">${category.enLabel}</p>
+                                    <p class="text-white/80 text-xs mt-3">${category.desc}</p>
+                                    <div class="mt-4 inline-flex items-center gap-2 text-reyhan-gold bg-reyhan-gold/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                                        <span>مشاهده</span>
+                                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            return el;
+        }
+
+        // Gallery View with Play Mode
+        function createGalleryView() {
+            const category = CATEGORIES.find(c => c.id === state.selectedCategory);
+            const images = getGalleryImages(state.selectedFabric.id, state.selectedCategory);
+            const galleryImages = images.map(img => ({
+                url: img.url,
+                tags: img.tags || []
+            }));
+
+            const imagesJson = JSON.stringify(galleryImages);
+
+            const el = document.createElement('div');
+            el.className = 'min-h-screen animate-fade-in bg-green-gradient';
+            el.innerHTML = `
+                <div class="pt-20 pb-12 px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-white">نمایشگاه ${category.label}</h2>
+                        <p class="text-reyhan-gold text-sm mt-2">طراحی‌های زیبا با پارچه ${state.selectedFabric.name}</p>
+                        ${images.length > 0 ? `
+                            <button onclick='startPlayMode(${imagesJson})'
+                                    class="mt-4 px-6 py-3 play-button rounded-lg font-bold flex items-center gap-2 mx-auto hover:scale-105 transition-all">
+                                <i data-lucide="play" class="w-5 h-5"></i>
+                                پخش این تصاویر
+                            </button>
+                            <p class="text-gray-300 text-sm mt-1">روی هر تصویر کلیک کنید</p>
+                        ` : ''}
+                    </div>
+                   
+                    ${images.length > 0 ? `
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                            ${images.map((imageData, index) => {
+                const imageUrl = imageData.url;
+                const tags = imageData.tags || [];
+                return `
+                                <div class="group relative rounded-2xl overflow-hidden border-2 border-reyhan-gold/20 hover:border-reyhan-gold transition-all duration-500 animate-slide-up backdrop-blur-sm image-container"
+                                     style="animation-delay: ${index * 0.1}s">
+                                    
+                                    ${tags.length > 0 ? `
+                                        <div class="image-tag-badge" onclick="event.stopPropagation(); searchByTag('${tags[0]}')">
+                                            <i data-lucide="tag" class="w-3 h-3 inline ml-1"></i>
+                                            ${tags.length} تگ
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <img src="${imageUrl}"
+                                         class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+                                         onclick="openImageInNewTab('${imageUrl}')">
+                                    
+                                    <div class="image-tags-overlay">
+                                        ${tags.length > 0 ? `
+                                            <div class="flex flex-wrap gap-1 justify-center">
+                                                ${tags.map(tag => `
+                                                    <span class="overlay-tag" onclick="event.stopPropagation(); searchByTag('${tag}')">${tag}</span>
+                                                `).join('')}
+                                            </div>
+                                        ` : '<p class="text-gray-400 text-xs text-center">بدون تگ</p>'}
+                                    </div>
+                                    
+                                    <div class="absolute top-4 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                                        ${index + 1}
+                                    </div>
+                                </div>
+                            `}).join('')}
+                        </div>
+                    ` : `
+                        <div class="text-center py-16 glass-panel rounded-2xl max-w-md mx-auto">
+                            <i data-lucide="image-off" class="w-16 h-16 text-reyhan-gold/50 mx-auto mb-4"></i>
+                            <p class="text-gray-300">تصویری برای این دسته‌بندی موجود نیست</p>
+                        </div>
+                    `}
+                </div>
+            `;
+            return el;
+        }
+
+        window.selectFabric = (id) => {
+            state.selectedFabric = FABRICS.find(f => f.id === id);
+            navigateTo('category');
+        };
+
+        window.selectCategory = (categoryId) => {
+            state.selectedCategory = categoryId;
+            navigateTo('gallery');
+        };
+
+        window.startPlayMode = (images) => {
+            if (!images || images.length === 0) {
+                showNotification('تصویری برای نمایش وجود ندارد', 'warning');
+                return;
+            }
+            startPlayMode(images);
+        };
+
+        // Render Function
+        function render() {
+            const app = document.getElementById('app');
+            app.innerHTML = '';
+
+            // Add navigation buttons to ALL pages
+            // Back button (for non-landing pages)
+            if (state.view !== 'landing') {
+                const backBtn = document.createElement('button');
+                backBtn.onclick = goBack;
+                backBtn.className = 'fixed top-4 right-4 z-50 p-3 back-button rounded-full transition-all backdrop-blur-sm hover:scale-110';
+                backBtn.innerHTML = '<i data-lucide="arrow-right" class="w-5 h-5 text-reyhan-gold"></i>';
+                app.appendChild(backBtn);
+            }
+
+            // All images button
+            const allImagesBtn = document.createElement('button');
+            allImagesBtn.onclick = openAllImages;
+            allImagesBtn.className = `fixed top-4 ${state.view !== 'landing' ? 'right-20' : 'right-4'} z-50 p-3 bg-reyhan-gold/20 hover:bg-reyhan-gold/30 rounded-full transition-all backdrop-blur-sm hover:scale-110`;
+            allImagesBtn.innerHTML = '<i data-lucide="grid" class="w-5 h-5 text-reyhan-gold"></i>';
+            app.appendChild(allImagesBtn);
+
+            // Search button
+            const searchBtn = document.createElement('button');
+            searchBtn.onclick = openTagSearch;
+            searchBtn.className = `fixed top-4 ${state.view !== 'landing' ? 'right-36' : 'right-20'} z-50 p-3 bg-reyhan-gold/20 hover:bg-reyhan-gold/30 rounded-full transition-all backdrop-blur-sm hover:scale-110`;
+            searchBtn.innerHTML = '<i data-lucide="search" class="w-5 h-5 text-reyhan-gold"></i>';
+            app.appendChild(searchBtn);
+
+            // QR button
+            const qrBtn = document.createElement('button');
+            qrBtn.onclick = toggleQrPopup;
+            qrBtn.className = `fixed top-4 ${state.view !== 'landing' ? 'right-52' : 'right-36'} z-50 p-3 bg-reyhan-gold/20 hover:bg-reyhan-gold/30 rounded-full transition-all backdrop-blur-sm hover:scale-110`;
+            qrBtn.innerHTML = '<i data-lucide="qr-code" class="w-5 h-5 text-reyhan-gold"></i>';
+            app.appendChild(qrBtn);
+
+            // Home button (for non-landing pages)
+            if (state.view !== 'landing') {
+                const homeBtn = document.createElement('button');
+                homeBtn.onclick = () => navigateTo('landing');
+                homeBtn.className = 'fixed top-4 left-4 z-50 p-3 bg-reyhan-gold/20 hover:bg-reyhan-gold/30 rounded-full transition-all backdrop-blur-sm hover:scale-110';
+                homeBtn.innerHTML = '<i data-lucide="home" class="w-5 h-5 text-reyhan-gold"></i>';
+                app.appendChild(homeBtn);
+            }
+
+            // Render current view
+            switch (state.view) {
+                case 'landing': app.appendChild(createLandingView()); break;
+                case 'category': app.appendChild(createCategoryView()); break;
+                case 'gallery': app.appendChild(createGalleryView()); break;
+                case 'allImages': app.appendChild(createAllImagesView()); break;
+                default: app.appendChild(createLandingView());
+            }
+
+            // Add modals
+            if (state.tagSearchState.isOpen) {
+                app.innerHTML += createTagSearchModal();
+            }
+            if (state.qrPopupVisible) {
+                app.innerHTML += createQrPopup();
+            }
+
+            setTimeout(() => {
+                lucide.createIcons();
+                resetScreenSaverTimer();
+            }, 50);
+        }
+
+        // Track user activity for screen saver
+        document.addEventListener('mousemove', resetScreenSaverTimer);
+        document.addEventListener('keydown', resetScreenSaverTimer);
+        document.addEventListener('click', resetScreenSaverTimer);
+        document.addEventListener('touchstart', resetScreenSaverTimer);
+        document.addEventListener('scroll', resetScreenSaverTimer);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            render();
+        });
+
+        // Make functions globally available
+        window.toggleQrPopup = toggleQrPopup;
+        window.navigateTo = navigateTo;
+        window.openImageInNewTab = openImageInNewTab;
+        window.searchByTag = searchByTag;
+        window.startPlayMode = startPlayMode;
+        window.goBack = goBack;
+    </script>
+</body>
+
+</html>
