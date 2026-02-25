@@ -301,6 +301,18 @@
             background: rgba(212, 175, 55, 0.3);
             border-color: rgba(212, 175, 55, 0.6);
         }
+
+        .nav-button {
+            background: rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.2s;
+        }
+
+        .nav-button:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -310,15 +322,15 @@
 
     <script>
         /**
-         * REYHANTEX FABRIC SHOWROOM - ULTIMATE PUBLIC VERSION
-         * Complete with all fabrics and images from admin version
+         * REYHANTEX FABRIC SHOWROOM - COMPLETE PUBLIC VERSION
+         * Updated with all fabrics, images, and proper back navigation
          */
 
         const CONFIG = {
             logoImage: localStorage.getItem('reyhantex_logo') || 'assets/logo/IMG_20251209_154206_917.jpg'
         };
 
-        // Complete fabrics list from admin version
+        // Complete fabrics list from admin version (10 fabrics)
         const FABRICS = [
             {
                 id: 1,
@@ -332,7 +344,6 @@
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
             },
-            // NEW: PofakiNegini (پفکی نگینی) - ID 2
             {
                 id: 2,
                 name: 'پفکی نگینی',
@@ -383,17 +394,16 @@
             },
             {
                 id: 6,
-                name: 'گیپور طرح یک',
-                enName: 'Gipur1',
+                name: 'ملیکا',
+                enName: 'Melika',
                 price: '$$$$',
                 image: 'assets/fabric/melika/female/Gemini_Generated_Image_uabf1tuabf1tuabf.png',
                 categoryImages: {
                     male: 'assets/fabric/selina/male/1770109219087.png',
-                    female: 'assets/fabric/pofaki/female/1770018110135.png',
+                    female: 'assets/fabric/melika/female/Gemini_Generated_Image_uabf1tuabf1tuabf.png',
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
             },
-            // NEW: PofakiSadeh (پفکی ساده) - ID 7
             {
                 id: 7,
                 name: 'پفکی ساده',
@@ -406,7 +416,6 @@
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
             },
-            // NEW: Bermando (برماندو) - ID 8
             {
                 id: 8,
                 name: 'برماندو',
@@ -419,7 +428,6 @@
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
             },
-            // NEW: JakardFitileh (ژاکارد فتیله‌ای) - ID 9
             {
                 id: 9,
                 name: 'ژاکارد فتیله‌ای',
@@ -429,6 +437,18 @@
                 categoryImages: {
                     male: 'assets/fabric/selina/male/1770109219087.png',
                     female: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_vwv74dvwv74dvwv7.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
+            },
+            {
+                id: 10,
+                name: 'ملیسا',
+                enName: 'Melisa',
+                price: '$$$$',
+                image: 'assets/fabric/melisa/female/Gemini_Generated_Image_7wp8iy7wp8iy7wp8.png',
+                categoryImages: {
+                    male: 'assets/fabric/melisa/male/Gemini_Generated_Image_4mop9l4mop9l4mop.png',
+                    female: 'assets/fabric/melisa/female/Gemini_Generated_Image_7wp8iy7wp8iy7wp8.png',
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
             }
@@ -465,6 +485,49 @@
         const GALLERY_IMAGES = {
             reyhana_male: [],
             reyhana_female: [
+                // New images
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_3gglfa3gglfa3ggl.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_3wlyc33wlyc33wly.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_4e4fvg4e4fvg4e4f.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_4mtuyz4mtuyz4mtu.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_4v4kja4v4kja4v4k.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_5u1mtz5u1mtz5u1m.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_63mxga63mxga63mx.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_6ajcf46ajcf46ajc.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_6kkoug6kkoug6kko.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_6ppnd96ppnd96ppn.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_6qvu3y6qvu3y6qvu.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_7z84b87z84b87z84.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_9lauiw9lauiw9lau.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_a07g5va07g5va07g.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_bab337bab337bab3.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_cldz5jcldz5jcldz.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_fqml32fqml32fqml.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_isbtkpisbtkpisbt.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_isnjmyisnjmyisnj.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_je481xje481xje48.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_kyc5w6kyc5w6kyc5.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_lsedollsedollsed.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_mosvsnmosvsnmosv.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_n68jtpn68jtpn68j.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_nepmmqnepmmqnepm.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_orebs3orebs3oreb.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_oszjy9oszjy9oszj.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_owicouowicouowic.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_ozmyz9ozmyz9ozmy.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_pq7kiopq7kiopq7k.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_q1orzfq1orzfq1or.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_r5x1x0r5x1x0r5x1.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_ridhpgridhpgridh.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_rwwqhurwwqhurwwq.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_thd9nothd9nothd9.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_tm4yu7tm4yu7tm4y.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_twkmnktwkmnktwkm.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_us86owus86owus86.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_w6r22nw6r22nw6r2.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_y95ohzy95ohzy95o.png', tags: [] },
+                { url: 'assets/fabric/reyhana/female/new/Gemini_Generated_Image_yl4jx3yl4jx3yl4j.png', tags: [] },
+                // Original images
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 03_47_37 PM.png', tags: ['ساده', 'ساحلی'] },
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 03_56_47 PM.png', tags: ['ساده', 'تاپ'] },
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 28, 2026, 04_05_52 PM.png', tags: ['ساده', 'شومیز'] },
@@ -496,7 +559,7 @@
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 11_45_50 AM.png', tags: ['ست', 'تیشرت'] },
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_44_18 PM.png', tags: ['ساده', 'ساحلی'] },
                 { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_49_36 PM.png', tags: ['ساده', 'ساحلی'] },
-                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_57_26 PM.png', tags: ['ست', 'تاپ'] },
+                { url: 'assets/fabric/reyhana/female/ChatGPT Image Jan 29, 2026, 12_57_26 PM.png', tags: ['ست', 'تاپ'] }
             ],
             reyhana_children: [
                 { url: 'assets/fabric/reyhana/children/1770015636848.png', tags: ['ساده', 'ست'] },
@@ -513,7 +576,6 @@
                 { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_uxyx4huxyx4huxyx.png', tags: ['ساده', 'ست'] },
                 { url: 'assets/fabric/reyhana/children/Gemini_Generated_Image_vpzgcuvpzgcuvpzg.png', tags: ['ساده', 'ست'] },
             ],
-            // NEW: PofakiNegini images
             pofakiNegini_male: [],
             pofakiNegini_female: [
                 { url: 'assets/fabric/pofakiNegini/female/Gemini_Generated_Image_1rgolz1rgolz1rgo.png', tags: [] },
@@ -788,25 +850,74 @@
                 { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_y74033y74033y740.png', tags: ['ست', 'تیشرت'] },
                 { url: 'assets/fabric/poliEsterPanbeh_U/children/Gemini_Generated_Image_zck9ptzck9ptzck9.png', tags: ['ست', 'تیشرت'] },
             ],
-            gipur1_male: [],
-            gipur1_female: [
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_3fovbq3fovbq3fov.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_7jw4ck7jw4ck7jw4.png', tags: ['ساحلی'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_8hf8gf8hf8gf8hf8.png', tags: ['ساحلی'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_875yig875yig875y.png', tags: ['تاپ', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_g27nj2g27nj2g27n.png', tags: ['ساده', 'تونیک'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_imjw0pimjw0pimjw.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_jqtzgyjqtzgyjqtz.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_kvqh17kvqh17kvqh.png', tags: ['پیراهن', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_piq456piq456piq4.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_qhdi91qhdi91qhdi.png', tags: ['تاپ', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_ryqluuryqluuryql.png', tags: ['تاپ', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_uabf1tuabf1tuabf.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_urhjraurhjraurhj.png', tags: ['تیشرت', 'ست'] },
-                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_viwosviwosviwosv.png', tags: ['تیشرت', 'ست'] },
+            melika_male: [],
+            melika_female: [
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_2gskza2gskza2gsk.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_2jc2bb2jc2bb2jc2.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_2wuxfa2wuxfa2wux.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_3lv1mv3lv1mv3lv1.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_4w3v244w3v244w3v.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_5qa7pu5qa7pu5qa7.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_6uc6xs6uc6xs6uc6.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_7k6rjm7k6rjm7k6r.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_7w42mb7w42mb7w42.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_8c0yx78c0yx78c0y.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_8r74p88r74p88r74.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_9qwddx9qwddx9qwd.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_76a2j176a2j176a2.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_88jc2b88jc2b88jc.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_93fka093fka093fk.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_384eg4384eg4384e.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_aafqnmaafqnmaafq.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_ab0fqlab0fqlab0f.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_adw4v1adw4v1adw4.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_aj1kfmaj1kfmaj1k.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_amd4nlamd4nlamd4.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_b17cf8b17cf8b17c.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_bpwdopbpwdopbpwd.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_bwadccbwadccbwad.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_c10j0dc10j0dc10j.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_dshuvfdshuvfdshu.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_ff8k31ff8k31ff8k.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_goiwrgoiwrgoiwrg.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_h4hg7gh4hg7gh4hg.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_h9806th9806th980.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_j0bsqzj0bsqzj0bs.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_jfk730jfk730jfk7.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_kgx6vkkgx6vkkgx6.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_m2o90lm2o90lm2o9.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_m5kiwim5kiwim5ki.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_mcds8jmcds8jmcds.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_mi3xq8mi3xq8mi3x.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_n26fwnn26fwnn26f.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_nb5k6jnb5k6jnb5k.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_pso0uwpso0uwpso0.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_q3rfm2q3rfm2q3rf.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_qeuaqrqeuaqrqeua.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_qk6j7qk6j7qk6j7q.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_rfwsh9rfwsh9rfws.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_s1d33es1d33es1d3.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_s7kzj1s7kzj1s7kz.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_t8c5nct8c5nct8c5.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_t10lskt10lskt10l.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_tbo2avtbo2avtbo2.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_ti93ejti93ejti93.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_tiyrkttiyrkttiyr.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_u1rlzfu1rlzfu1rl.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_uut6jtuut6jtuut6.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_v3wiqpv3wiqpv3wi.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_v7sdkqv7sdkqv7sd.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_vauxo1vauxo1vaux.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_vtmdktvtmdktvtmd.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_wknn5gwknn5gwknn.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_x2vspfx2vspfx2vs.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_xedrplxedrplxedr.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_xq7gpexq7gpexq7g.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_y0x5bdy0x5bdy0x5.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_y78ge5y78ge5y78g.png', tags: [] },
+                { url: 'assets/fabric/melika/female/Gemini_Generated_Image_z0jz8vz0jz8vz0jz.png', tags: [] }
             ],
-            gipur1_children: [],
-            // NEW: PofakiSadeh images
+            melika_children: [],
             pofakiSadeh_female: [
                 { url: 'assets/fabric/pofakiSadeh/female/1771061793709.png', tags: [] },
                 { url: 'assets/fabric/pofakiSadeh/female/1771061938873.png', tags: [] },
@@ -851,7 +962,6 @@
             ],
             pofakiSadeh_male: [],
             pofakiSadeh_children: [],
-            // NEW: Bermando images
             bermando_female: [
                 { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_1i3mom1i3mom1i3m.png', tags: [] },
                 { url: 'assets/fabric/bermando/female/Gemini_Generated_Image_1j36p21j36p21j36.png', tags: [] },
@@ -911,7 +1021,6 @@
             ],
             bermando_male: [],
             bermando_children: [],
-            // NEW: JakardFitileh images
             jakardFitileh_female: [
                 { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_1lrn5b1lrn5b1lrn.png', tags: [] },
                 { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_1ur3ke1ur3ke1ur3.png', tags: [] },
@@ -969,7 +1078,49 @@
                 { url: 'assets/fabric/jakardFitileh/female/Gemini_Generated_Image_z8dw8ez8dw8ez8dw.png', tags: [] }
             ],
             jakardFitileh_male: [],
-            jakardFitileh_children: []
+            jakardFitileh_children: [],
+            melisa_male: [
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_4mop9l4mop9l4mop.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_bzekjdbzekjdbzek.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_edn2otedn2otedn2.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_muj4hvmuj4hvmuj4.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_nrxw1anrxw1anrxw.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_ntge1ontge1ontge.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_pt76e0pt76e0pt76.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_qz3vaxqz3vaxqz3v.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_t8ut7ct8ut7ct8ut.png', tags: [] },
+                { url: 'assets/fabric/melisa/male/Gemini_Generated_Image_tjhg7jtjhg7jtjhg.png', tags: [] }
+            ],
+            melisa_female: [
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_7tg3te7tg3te7tg3.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_7wp8iy7wp8iy7wp8.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_8ul7318ul7318ul7.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_234bf234bf234bf2.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_ap6ry9ap6ry9ap6r.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_d1rtd8d1rtd8d1rt.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_eq5qb8eq5qb8eq5q.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_fv7okjfv7okjfv7o.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_g8zkekg8zkekg8zk.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_gfk6i5gfk6i5gfk6.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_hha1eahha1eahha1.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_hi1s7ghi1s7ghi1s.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_jgduexjgduexjgdu.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_jjohhjjohhjjohhj.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_kjkfmgkjkfmgkjkf.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_p6hdfnp6hdfnp6hd.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_q8qiz4q8qiz4q8qi.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_qjqqbrqjqqbrqjqq.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_qsjry1qsjry1qsjr.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_qtec78qtec78qtec.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_rnjycornjycornjy.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_rouz4krouz4krouz.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_syk7h8syk7h8syk7.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_v4ab2kv4ab2kv4ab.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_v5mryjv5mryjv5mr.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_vp0jn8vp0jn8vp0j.png', tags: [] },
+                { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_xn9azfxn9azfxn9a.png', tags: [] }
+            ],
+            melisa_children: [],
         };
 
         // Screen saver variables
@@ -984,7 +1135,7 @@
         let playModeIndex = 0;
         let playModeInterval = null;
 
-        // Navigation history stack
+        // Navigation history stack - for proper back button functionality
         const navigationHistory = [];
 
         // Application State
@@ -1009,10 +1160,11 @@
                 3: 'pofaki',
                 4: 'selina',
                 5: 'poliEsterPanbeh',
-                6: 'gipur1',
+                6: 'melika',
                 7: 'pofakiSadeh',
                 8: 'bermando',
-                9: 'jakardFitileh'
+                9: 'jakardFitileh',
+                10: 'melisa'
             };
             return fabricNames[id];
         }
@@ -1062,11 +1214,12 @@
                     (fabricName === 'pofaki' && f.enName === 'Pofaki (Yenzi)') ||
                     (fabricName === 'reyhana' && f.enName === 'Reyhana') ||
                     (fabricName === 'selina' && f.enName === 'Selina') ||
-                    (fabricName === 'gipur1' && f.enName === 'Gipur1') ||
-                    (fabricName === 'pofakiNegini' && f.enName === 'PofakiNegini') ||
+                    (fabricName === 'melika' && f.enName === 'Melika') ||
                     (fabricName === 'pofakiSadeh' && f.enName === 'PofakiSadeh') ||
                     (fabricName === 'bermando' && f.enName === 'Bermando') ||
-                    (fabricName === 'jakardFitileh' && f.enName === 'JakardFitileh');
+                    (fabricName === 'pofakiNegini' && f.enName === 'PofakiNegini') ||
+                    (fabricName === 'jakardFitileh' && f.enName === 'JakardFitileh') ||
+                    (fabricName === 'melisa' && f.enName === 'Melisa');
             });
             return fabric ? fabric.name : fabricName;
         }
@@ -1236,9 +1389,9 @@
             render();
         }
 
-        // Navigation with history
+        // Navigation with history - IMPROVED VERSION
         function navigateTo(view) {
-            // Add current view to history before changing
+            // Add current view to history before changing, but avoid duplicates
             if (navigationHistory.length === 0 || navigationHistory[navigationHistory.length - 1] !== state.view) {
                 navigationHistory.push(state.view);
             }
@@ -1249,7 +1402,7 @@
             resetScreenSaverTimer();
         }
 
-        // Back navigation
+        // Back navigation - PROPERLY IMPLEMENTED
         function goBack() {
             if (navigationHistory.length > 0) {
                 const previousView = navigationHistory.pop();
@@ -1258,6 +1411,7 @@
                 window.scrollTo(0, 0);
                 resetScreenSaverTimer();
             } else {
+                // If no history, go to landing as fallback
                 if (state.view !== 'landing') {
                     navigateTo('landing');
                 }
@@ -1491,7 +1645,7 @@
                         <h2 class="text-3xl font-bold text-white">همه تصاویر</h2>
                         <p class="text-reyhan-gold text-sm mt-2">${allImages.length} تصویر از تمامی پارچه‌ها</p>
                         ${allImages.length > 0 ? `
-                            <button onclick="startPlayMode(${JSON.stringify(allImages)})"
+                            <button onclick="startPlayModeFromAllImages()"
                                     class="mt-4 px-6 py-3 play-button rounded-lg font-bold flex items-center gap-2 mx-auto hover:scale-105 transition-all">
                                 <i data-lucide="play" class="w-5 h-5"></i>
                                 پخش خودکار تمام تصاویر
@@ -1845,6 +1999,24 @@
                             <p class="text-gray-300">تصویری برای این دسته‌بندی موجود نیست</p>
                         </div>
                     `}
+                    
+                    <div class="max-w-md mx-auto mt-16">
+                        <div class="glass-panel rounded-2xl p-8 text-center backdrop-blur-xl">
+                            <div class="w-16 h-16 bg-gradient-to-br from-reyhan-gold to-yellow-200 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
+                                <i data-lucide="check" class="w-8 h-8 text-reyhan-dark"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">از بازدید شما متشکریم!</h3>
+                            <p class="text-gray-300 mb-8">
+                                پارچه <span class="text-reyhan-gold font-bold">${state.selectedFabric.name}</span><br>
+                                برای گروه <span class="text-reyhan-gold font-bold">${category.label}</span>
+                            </p>
+                           
+                            <button onclick="goBackToLanding()"
+                                    class="w-full py-3 px-4 btn-gold rounded-lg font-bold">
+                                بازگشت به صفحه اصلی
+                            </button>
+                        </div>
+                    </div>
                 </div>
             `;
             return el;
@@ -1868,12 +2040,27 @@
             startPlayMode(images);
         };
 
+        window.startPlayModeFromAllImages = () => {
+            const allImages = getAllImages();
+            if (allImages.length > 0) {
+                startPlayMode(allImages);
+            } else {
+                showNotification('تصویری برای نمایش وجود ندارد', 'warning');
+            }
+        };
+
+        window.goBackToLanding = () => {
+            state.selectedFabric = null;
+            state.selectedCategory = null;
+            navigateTo('landing');
+        };
+
         // Render Function
         function render() {
             const app = document.getElementById('app');
             app.innerHTML = '';
 
-            // Add navigation buttons to ALL pages
+            // Add navigation buttons to ALL pages with proper positioning
             // Back button (for non-landing pages)
             if (state.view !== 'landing') {
                 const backBtn = document.createElement('button');
