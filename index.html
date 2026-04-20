@@ -7,7 +7,7 @@
     <title>REYHANTEX | Premium Fabric Showroom</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/css/tailwind.js"></script>
 
     <!-- Google Fonts: Vazirmatn -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
         rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./assets/js/lucide.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -61,6 +61,30 @@
     </script>
 
     <style>
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('assets/fonts/Vazirmatn-Light.ttf') format('truetype');
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('assets/fonts/Vazirmatn-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('assets/fonts/Vazirmatn-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('assets/fonts/Vazirmatn-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
+
         body {
             font-family: 'Vazirmatn', sans-serif;
             background: #013a34;
@@ -330,7 +354,7 @@
             logoImage: localStorage.getItem('reyhantex_logo') || 'assets/logo/IMG_20251209_154206_917.jpg'
         };
 
-        // Complete fabrics list from admin version (10 fabrics)
+        // Complete fabrics list from admin version (11 fabrics - added کراش)
         const FABRICS = [
             {
                 id: 1,
@@ -451,6 +475,19 @@
                     female: 'assets/fabric/melisa/female/Gemini_Generated_Image_7wp8iy7wp8iy7wp8.png',
                     children: 'assets/fabric/pofaki/children/1770112752571.png'
                 }
+            },
+            // NEW FABRIC: کراش (Crash)
+            {
+                id: 11,
+                name: 'کراش',
+                enName: 'Crash',
+                price: '$$$$',
+                image: 'assets/fabric/crash/female/3d3d0b89-8ee5-4e95-866c-2757265b1e1b.png',
+                categoryImages: {
+                    male: 'assets/fabric/selina/male/1770109219087.png',
+                    female: 'assets/fabric/crash/female/3d3d0b89-8ee5-4e95-866c-2757265b1e1b.png',
+                    children: 'assets/fabric/pofaki/children/1770112752571.png'
+                }
             }
         ];
 
@@ -481,7 +518,7 @@
             },
         ];
 
-        // Complete gallery images from admin version
+        // Complete gallery images from admin version + added crash female images
         const GALLERY_IMAGES = {
             reyhana_male: [],
             reyhana_female: [
@@ -1121,6 +1158,35 @@
                 { url: 'assets/fabric/melisa/female/Gemini_Generated_Image_xn9azfxn9azfxn9a.png', tags: [] }
             ],
             melisa_children: [],
+            // NEW CRASH FABRIC IMAGES (FEMALE ONLY)
+            crash_male: [],
+            crash_female: [
+                { url: 'assets/fabric/crash/female/3d3d0b89-8ee5-4e95-866c-2757265b1e1b.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/17e578f8-62ad-4c79-888b-e7f12e2c9bd3.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/41d45441-c4f3-4366-a68e-716906f3d00d.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/42e0056e-b47c-476a-b210-42391cab7872.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/69ea41d3-933b-4746-9d5b-6964dfd7854d.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/92ac69f2-0e7f-488e-89ad-a7fc64668382.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/821a4ca1-3202-4f6a-ab8d-4c37664abb2c.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/05693a86-f4f0-4c03-838c-02eea9b1fbbe.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/6319d305-2ff6-4bd2-a589-83adab3efad7.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/9508d4b5-7379-443b-bed7-8daf3ae6955c.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/264368e1-f46c-4bd2-8093-37f6398d72fa.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/8846075e-3d6e-4c73-b047-cc0b1d138b40.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/93807865-61ff-4807-9169-b71e2420ff3e.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/a3195a24-18e9-4e6b-a936-70dd392d9752.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/a18140dc-26c6-4237-b4e6-02787156f47b.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/bc9aae39-08e8-47fd-8019-7feefa77db5a.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/c5d9abce-7d70-4a44-b714-dbdc5f8c2cfb.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/c9a8f2dc-86f6-468d-9dc7-80981023faa9.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/db872fad-b719-497c-babd-3dee6ecb9e1f.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/e4c5db06-b834-4f17-90f7-ba3b27c4c635.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/e10ee78c-c3dd-49da-81a1-efcd4097fa85.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/fb6dd551-2700-41fa-8f9d-61abe2f66407.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/fd7bf0c3-95d5-4699-b52d-271fdc420dea.png', tags: ['کراش', 'مدرن', 'شیک'] },
+                { url: 'assets/fabric/crash/female/fd710bfb-429a-4826-acff-1d6a92ba1576.png', tags: ['کراش', 'مدرن', 'شیک'] }
+            ],
+            crash_children: []
         };
 
         // Screen saver variables
@@ -1164,7 +1230,8 @@
                 7: 'pofakiSadeh',
                 8: 'bermando',
                 9: 'jakardFitileh',
-                10: 'melisa'
+                10: 'melisa',
+                11: 'crash'
             };
             return fabricNames[id];
         }
@@ -1219,7 +1286,8 @@
                     (fabricName === 'bermando' && f.enName === 'Bermando') ||
                     (fabricName === 'pofakiNegini' && f.enName === 'PofakiNegini') ||
                     (fabricName === 'jakardFitileh' && f.enName === 'JakardFitileh') ||
-                    (fabricName === 'melisa' && f.enName === 'Melisa');
+                    (fabricName === 'melisa' && f.enName === 'Melisa') ||
+                    (fabricName === 'crash' && f.enName === 'Crash');
             });
             return fabric ? fabric.name : fabricName;
         }
